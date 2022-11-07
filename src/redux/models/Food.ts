@@ -3,8 +3,7 @@ import { showMessage } from 'react-native-flash-message';
 import { FoodApi } from '../../services/apis';
 
 const IsState = {
-  banks: [],
-  bioType: null,
+  categories: [],
 };
 
 export const Food = {
@@ -17,8 +16,9 @@ export const Food = {
       try {
         const api = await FoodApi.fetchCategories();
         if (api) {
-          console.log(api);
-          return api;
+          dispatch.Food.setState({
+            categories: api?.categories,
+          });
         }
       } catch (error) {
         this.handleError(error);

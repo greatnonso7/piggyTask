@@ -1,6 +1,7 @@
 import { hp, wp } from './../../shared/responsive-dimension/index';
 import { StyleSheet } from 'react-native';
 import { Colors } from '../../styles/colors';
+import { fontFamily } from '../../styles/typography';
 
 export const styles = StyleSheet.create({
   container: {
@@ -19,13 +20,14 @@ export const styles = StyleSheet.create({
     marginTop: 80,
   },
   sliderTextContainer: {
-    marginTop: 40,
+    marginTop: 20,
   },
   sliderText: {
-    fontSize: hp(30),
+    fontSize: hp(28),
     textAlign: 'center',
     color: Colors.WHITE,
     fontWeight: 'bold',
+    fontFamily: fontFamily.DMSansMedium,
   },
   onboardingIcon: {
     width: wp(250),

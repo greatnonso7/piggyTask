@@ -9,6 +9,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import { Colors } from '../../styles/colors';
+import { fontFamily } from '../../styles/typography';
 import { hp, wp } from '../responsive-dimension';
 
 interface LongButtonProps {
@@ -79,6 +80,7 @@ const styles = StyleSheet.create({
     color: Colors.WHITE,
     fontSize: hp(16),
     fontWeight: '700',
+    fontFamily: fontFamily.DMSansMedium,
     alignSelf: 'center',
     textAlign: 'center',
   },

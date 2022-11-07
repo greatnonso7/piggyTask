@@ -5,4 +5,6 @@ export const Colors = {
   GREY_PRIMARY: '#282828',
   LIGHT_GREY: '#7A7A7A',
   GREY_100: '#E9E9E9',
+  GREY_200: '#EFEFEF',
+  LIGHT_GREEN: '#539F82',
 };
