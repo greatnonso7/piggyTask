@@ -14,8 +14,8 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-piggyTask-piggyTaskTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-piggyTask-piggyTaskTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		C5C7F9F7B20E457CBF6D9F80 /* DMSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A342C4B5CF27476DB1D1DA84 /* DMSans-Bold.ttf */; };
 		99535BF1FB4C434B8744ABD9 /* DMSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08B75D42F6844B8CAACA56B9 /* DMSans-Medium.ttf */; };
+		C5C7F9F7B20E457CBF6D9F80 /* DMSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A342C4B5CF27476DB1D1DA84 /* DMSans-Bold.ttf */; };
 		E2E610EC99604A99B9D2ACCA /* DMSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 874F4AD4B367470D9DEB5E9A /* DMSans-Regular.ttf */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +33,7 @@
 		00E356EE1AD99517003FC87E /* piggyTaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = piggyTaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* piggyTaskTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = piggyTaskTests.m; sourceTree = "<group>"; };
+		08B75D42F6844B8CAACA56B9 /* DMSans-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "DMSans-Medium.ttf"; path = "../src/assets/fonts/DMSans-Medium.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* piggyTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = piggyTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = piggyTask/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = piggyTask/AppDelegate.mm; sourceTree = "<group>"; };
@@ -45,11 +46,10 @@
 		5B7EB9410499542E8C5724F5 /* Pods-piggyTask-piggyTaskTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-piggyTask-piggyTaskTests.debug.xcconfig"; path = "Target Support Files/Pods-piggyTask-piggyTaskTests/Pods-piggyTask-piggyTaskTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-piggyTask.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-piggyTask.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = piggyTask/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		874F4AD4B367470D9DEB5E9A /* DMSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "DMSans-Regular.ttf"; path = "../src/assets/fonts/DMSans-Regular.ttf"; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-piggyTask-piggyTaskTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-piggyTask-piggyTaskTests.release.xcconfig"; path = "Target Support Files/Pods-piggyTask-piggyTaskTests/Pods-piggyTask-piggyTaskTests.release.xcconfig"; sourceTree = "<group>"; };
+		A342C4B5CF27476DB1D1DA84 /* DMSans-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "DMSans-Bold.ttf"; path = "../src/assets/fonts/DMSans-Bold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		A342C4B5CF27476DB1D1DA84 /* DMSans-Bold.ttf */ = {isa = PBXFileReference; name = "DMSans-Bold.ttf"; path = "../src/assets/fonts/DMSans-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		08B75D42F6844B8CAACA56B9 /* DMSans-Medium.ttf */ = {isa = PBXFileReference; name = "DMSans-Medium.ttf"; path = "../src/assets/fonts/DMSans-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		874F4AD4B367470D9DEB5E9A /* DMSans-Regular.ttf */ = {isa = PBXFileReference; name = "DMSans-Regular.ttf"; path = "../src/assets/fonts/DMSans-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +100,17 @@
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = piggyTask;
+			sourceTree = "<group>";
+		};
+		21E519099B81416489A337A7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A342C4B5CF27476DB1D1DA84 /* DMSans-Bold.ttf */,
+				08B75D42F6844B8CAACA56B9 /* DMSans-Medium.ttf */,
+				874F4AD4B367470D9DEB5E9A /* DMSans-Regular.ttf */,
+			);
+			name = Resources;
+			path = "";
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -154,17 +165,6 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
-		};
-		21E519099B81416489A337A7 /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				A342C4B5CF27476DB1D1DA84 /* DMSans-Bold.ttf */,
-				08B75D42F6844B8CAACA56B9 /* DMSans-Medium.ttf */,
-				874F4AD4B367470D9DEB5E9A /* DMSans-Regular.ttf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 

@@ -1,4 +1,5 @@
 import Dashboard from '../screens/dashboard';
+import SingleMeal from '../screens/dashboard/SingleMeal';
 import Login from '../screens/login';
 
 const options = {
@@ -16,6 +17,10 @@ export const AppRoutes = {
     {
       name: 'Dashboard',
       component: Dashboard,
+    },
+    {
+      name: 'SingleMeal',
+      component: SingleMeal,
     },
   ],
 };

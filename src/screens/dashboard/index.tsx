@@ -17,7 +17,7 @@ interface MealProps {
   strMealThumb: string;
 }
 
-const Dashboard = () => {
+const Dashboard = ({ navigation: { navigate } }: any) => {
   const {
     Food: {
       fetchFoodCategories,
@@ -126,7 +126,10 @@ const Dashboard = () => {
                 (item: MealProps) => item.strMeal === meal.strMeal,
               );
               return (
-                <TouchableOpacity key={index} style={styles.mealItemContainer}>
+                <TouchableOpacity
+                  onPress={() => navigate('SingleMeal', { meal })}
+                  key={index}
+                  style={styles.mealItemContainer}>
                   <Text style={styles.mealItemTitle}>
                     {meal?.strMeal?.length > 20
                       ? `${meal?.strMeal?.slice(0, 20)}...`
@@ -180,7 +183,6 @@ const Dashboard = () => {
           <Text style={styles.cartItemText}>Cart</Text>
           <Text style={styles.cartCountText}>{cart?.length} items</Text>
         </View>
-        <View>{/* {cart?.map} */}</View>
       </View>
     </SafeAreaView>
   );

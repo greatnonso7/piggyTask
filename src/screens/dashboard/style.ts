@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
-import { hp, wp } from '../../shared/responsive-dimension';
+import { hasNotch } from 'react-native-device-info';
+import { deviceHeight, hp, wp } from '../../shared/responsive-dimension';
 import { Colors } from '../../styles/colors';
 import { fontFamily } from '../../styles/typography';
 
@@ -8,9 +9,47 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.WHITE,
   },
+  singleMealContainer: {
+    flex: 1,
+    backgroundColor: Colors.LIGHT_GREEN,
+  },
   headerContainer: {
     marginTop: hp(20),
     marginHorizontal: wp(24),
+  },
+  bodyContainer: {
+    marginTop: hp(50),
+    backgroundColor: Colors.WHITE,
+    height: deviceHeight,
+    paddingVertical: hp(80),
+    borderTopLeftRadius: hp(20),
+    borderTopRightRadius: hp(20),
+  },
+  mealText: {
+    fontFamily: fontFamily.DMSansMedium,
+    fontSize: hp(16),
+    paddingTop: hp(10),
+    color: Colors.APP_BLACK,
+    textAlign: 'center',
+  },
+  mealInfoTextContainer: {
+    marginTop: hp(10),
+    flexDirection: 'row',
+    alignItems: 'center',
+    alignSelf: 'center',
+  },
+  pizzaTextContainer: {
+    width: 24,
+    height: 24,
+    borderRadius: 100,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: Colors.YELLOW_100,
+  },
+  pizzaText: {
+    paddingLeft: wp(10),
+    fontFamily: fontFamily.DMSansMedium,
+    color: Colors.GREY_500,
   },
   nameText: {
     fontSize: hp(14),
@@ -110,6 +149,11 @@ export const styles = StyleSheet.create({
     borderRadius: 100,
     alignSelf: 'center',
   },
+  absolute: {
+    position: 'absolute',
+    top: hasNotch() ? hp(110) : hp(70),
+    zIndex: 10000,
+  },
   caloriesText: {
     fontFamily: fontFamily.DMSansMedium,
     color: Colors.APP_BLACK,
@@ -125,6 +169,18 @@ export const styles = StyleSheet.create({
     paddingLeft: wp(4),
     fontFamily: fontFamily.DMSansRegular,
     fontSize: hp(12),
+  },
+  timeColor: {
+    fontSize: hp(14),
+    color: Colors.APP_BLACK,
+  },
+  paddingText: {
+    paddingHorizontal: wp(10),
+  },
+  fullStop: {
+    paddingHorizontal: wp(10),
+    fontSize: 20,
+    bottom: 2,
   },
   addToCartContainer: {
     width: wp(40),
@@ -168,5 +224,99 @@ export const styles = StyleSheet.create({
     fontFamily: fontFamily.DMSansMedium,
     fontSize: hp(14),
     paddingTop: hp(7),
+  },
+  moreInfoContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: hp(10),
+  },
+  itemContainer: {
+    width: wp(98),
+    height: hp(120),
+    borderWidth: 1,
+    borderRadius: wp(10),
+    marginRight: wp(15),
+    paddingHorizontal: wp(10),
+    paddingVertical: hp(20),
+    borderColor: Colors.GREY_500,
+  },
+  inactive: {
+    width: 20,
+    height: 20,
+    alignSelf: 'center',
+    borderWidth: 1,
+    marginBottom: hp(10),
+    borderRadius: 100,
+    borderColor: Colors.GREY_500,
+  },
+  active: {
+    borderColor: Colors.LIGHT_GREEN,
+    borderWidth: 6,
+  },
+  activeBorder: {
+    borderColor: Colors.LIGHT_GREEN,
+  },
+  titleText: {
+    textAlign: 'center',
+    fontFamily: fontFamily.DMSansMedium,
+    fontSize: hp(14),
+    color: Colors.GREY_500,
+  },
+  priceText: {
+    textAlign: 'center',
+    fontFamily: fontFamily.DMSansMedium,
+    fontSize: hp(16),
+    paddingTop: hp(5),
+    color: Colors.APP_BLACK,
+  },
+  itemContentContainerStyle: {
+    marginTop: hp(30),
+    marginHorizontal: wp(24),
+  },
+  itemInfoText: {
+    paddingHorizontal: wp(24),
+    paddingTop: hp(30),
+    fontFamily: fontFamily.DMSansMedium,
+    fontSize: hp(13),
+    color: Colors.GREY_500,
+  },
+  cartAmountContainer: {
+    marginTop: hp(20),
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginHorizontal: wp(24),
+  },
+  amountCountText: {
+    fontFamily: fontFamily.DMSansMedium,
+    fontSize: hp(15),
+    color: Colors.APP_BLACK,
+  },
+  colorText: {
+    color: Colors.LIGHT_GREEN,
+  },
+  addCartContainer: {
+    flexDirection: 'row',
+  },
+  count: {
+    width: wp(40),
+    textAlign: 'center',
+    fontFamily: fontFamily.DMSansMedium,
+    alignSelf: 'center',
+  },
+  additionContainer: {
+    width: wp(30),
+    height: hp(30),
+    borderWidth: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderColor: Colors.GREY_500,
+    borderRadius: hp(5),
+  },
+  additionText: {
+    fontFamily: fontFamily.DMSansBold,
+    color: Colors.GREY_500,
+    fontSize: hp(20),
   },
 });
