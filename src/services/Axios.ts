@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const Axios = axios.create({
-  baseURL: 'https://themealdb.com/api/json/v1/1/',
+  baseURL: 'https://themealdb.com/api/json/v1/1',
   timeout: 60000,
 });
 
@@ -14,7 +14,7 @@ Axios.interceptors.response.use(
     return response;
   },
   async error => {
-    console.log(error);
+    console.log(error?.response);
     return Promise.reject(error.response);
   },
 );

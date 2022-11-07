@@ -1,4 +1,4 @@
-import { init, RematchRootState, RematchDispatch } from '@rematch/core';
+import { init, RematchRootState } from '@rematch/core';
 
 import { models, RootModel } from '../models';
 import { loadingPlugin } from '../plugins';
@@ -12,4 +12,3 @@ export default init({
 });
 
 export type RootState = RematchRootState<RootModel>;
-export type Dispatch = RematchDispatch<RootModel>;

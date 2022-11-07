@@ -7,4 +7,7 @@ export const Colors = {
   GREY_100: '#E9E9E9',
   GREY_200: '#EFEFEF',
   LIGHT_GREEN: '#539F82',
+  GREY_300: '#A8A8A8',
+  GREY_400: '#F8F8F8',
+  GREY_500: '#959595',
 };
