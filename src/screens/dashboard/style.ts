@@ -304,6 +304,7 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     fontFamily: fontFamily.DMSansMedium,
     alignSelf: 'center',
+    color: Colors.APP_BLACK,
   },
   additionContainer: {
     width: wp(30),
