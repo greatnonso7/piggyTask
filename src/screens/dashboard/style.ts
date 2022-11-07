@@ -198,6 +198,9 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
+  loadingContainer: {
+    paddingVertical: hp(80),
+  },
   cartItemContainer: {
     position: 'absolute',
     bottom: hp(30),

@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, TouchableOpacity, Image, ScrollView } from 'react-native';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Image,
+  ScrollView,
+  ActivityIndicator,
+} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import SearchBar from '../../shared/search-bar';
 import { styles } from './style';
@@ -71,41 +78,45 @@ const Dashboard = ({ navigation: { navigate } }: any) => {
         </View>
       </View>
       <View>
-        <ScrollView
-          contentContainerStyle={styles.contentContainerStyle}
-          horizontal
-          showsHorizontalScrollIndicator={false}>
-          {categories
-            ?.map((category: CategoryProps, index) => {
-              return (
-                <TouchableOpacity
-                  onPress={() => selectActiveCategory(category)}
-                  style={[
-                    styles.categoryContainer,
-                    activeCategory === category.strCategory
-                      ? styles.activeCategory
-                      : null,
-                  ]}
-                  key={index}>
-                  <Image
-                    source={{ uri: category.strCategoryThumb }}
-                    resizeMode="contain"
-                    style={styles.categoryIcon}
-                  />
-                  <Text
+        {categories?.length > 0 ? (
+          <ScrollView
+            contentContainerStyle={styles.contentContainerStyle}
+            horizontal
+            showsHorizontalScrollIndicator={false}>
+            {categories
+              ?.map((category: CategoryProps, index) => {
+                return (
+                  <TouchableOpacity
+                    onPress={() => selectActiveCategory(category)}
                     style={[
-                      styles.categoryText,
+                      styles.categoryContainer,
                       activeCategory === category.strCategory
-                        ? styles.activeText
+                        ? styles.activeCategory
                         : null,
-                    ]}>
-                    {category.strCategory}
-                  </Text>
-                </TouchableOpacity>
-              );
-            })
-            ?.slice(0, 6)}
-        </ScrollView>
+                    ]}
+                    key={index}>
+                    <Image
+                      source={{ uri: category.strCategoryThumb }}
+                      resizeMode="contain"
+                      style={styles.categoryIcon}
+                    />
+                    <Text
+                      style={[
+                        styles.categoryText,
+                        activeCategory === category.strCategory
+                          ? styles.activeText
+                          : null,
+                      ]}>
+                      {category.strCategory}
+                    </Text>
+                  </TouchableOpacity>
+                );
+              })
+              ?.slice(0, 6)}
+          </ScrollView>
+        ) : (
+          <ActivityIndicator size={'small'} color={Colors.LIGHT_GREEN} />
+        )}
       </View>
 
       <View style={styles.categoryItemContainer}>
@@ -116,67 +127,73 @@ const Dashboard = ({ navigation: { navigate } }: any) => {
       </View>
 
       <View>
-        <ScrollView
-          contentContainerStyle={styles.mealItemContentContainerStyle}
-          horizontal
-          showsHorizontalScrollIndicator={false}>
-          {searchData
-            ?.map?.((meal: MealProps, index) => {
-              const found = cart.filter(
-                (item: MealProps) => item.strMeal === meal.strMeal,
-              );
-              return (
-                <TouchableOpacity
-                  onPress={() => navigate('SingleMeal', { meal })}
-                  key={index}
-                  style={styles.mealItemContainer}>
-                  <Text style={styles.mealItemTitle}>
-                    {meal?.strMeal?.length > 20
-                      ? `${meal?.strMeal?.slice(0, 20)}...`
-                      : meal?.strMeal}
-                  </Text>
-                  <Text style={styles.amountText}>
-                    $<Text style={styles.normalText}>9.99</Text>
-                  </Text>
-                  <Image
-                    source={{ uri: meal?.strMealThumb }}
-                    resizeMode="contain"
-                    style={styles.mealImage}
-                  />
-                  <View style={styles.mealItemFooterContainer}>
-                    <View>
-                      <Text style={styles.caloriesText}>🔥 44 calories</Text>
-                      <View style={styles.timeContainer}>
-                        <Clock size="16" color={Colors.GREY_500} />
-                        <Text style={styles.timeText}>20 min</Text>
+        {searchData?.length > 0 ? (
+          <ScrollView
+            contentContainerStyle={styles.mealItemContentContainerStyle}
+            horizontal
+            showsHorizontalScrollIndicator={false}>
+            {searchData
+              ?.map?.((meal: MealProps, index) => {
+                const found = cart.filter(
+                  (item: MealProps) => item.strMeal === meal.strMeal,
+                );
+                return (
+                  <TouchableOpacity
+                    onPress={() => navigate('SingleMeal', { meal })}
+                    key={index}
+                    style={styles.mealItemContainer}>
+                    <Text style={styles.mealItemTitle}>
+                      {meal?.strMeal?.length > 20
+                        ? `${meal?.strMeal?.slice(0, 20)}...`
+                        : meal?.strMeal}
+                    </Text>
+                    <Text style={styles.amountText}>
+                      $<Text style={styles.normalText}>9.99</Text>
+                    </Text>
+                    <Image
+                      source={{ uri: meal?.strMealThumb }}
+                      resizeMode="contain"
+                      style={styles.mealImage}
+                    />
+                    <View style={styles.mealItemFooterContainer}>
+                      <View>
+                        <Text style={styles.caloriesText}>🔥 44 calories</Text>
+                        <View style={styles.timeContainer}>
+                          <Clock size="16" color={Colors.GREY_500} />
+                          <Text style={styles.timeText}>20 min</Text>
+                        </View>
                       </View>
+                      <TouchableOpacity
+                        onPress={() => addToCart(meal)}
+                        activeOpacity={0.6}
+                        style={[
+                          styles.addToCartContainer,
+                          {
+                            backgroundColor: found?.includes(meal)
+                              ? Colors.LIGHT_GREEN
+                              : Colors.WHITE,
+                          },
+                        ]}>
+                        <ShoppingBag
+                          size="20"
+                          color={
+                            found?.includes(meal)
+                              ? Colors.WHITE
+                              : Colors.APP_BLACK
+                          }
+                        />
+                      </TouchableOpacity>
                     </View>
-                    <TouchableOpacity
-                      onPress={() => addToCart(meal)}
-                      activeOpacity={0.6}
-                      style={[
-                        styles.addToCartContainer,
-                        {
-                          backgroundColor: found?.includes(meal)
-                            ? Colors.LIGHT_GREEN
-                            : Colors.WHITE,
-                        },
-                      ]}>
-                      <ShoppingBag
-                        size="20"
-                        color={
-                          found?.includes(meal)
-                            ? Colors.WHITE
-                            : Colors.APP_BLACK
-                        }
-                      />
-                    </TouchableOpacity>
-                  </View>
-                </TouchableOpacity>
-              );
-            })
-            ?.slice(0, 6)}
-        </ScrollView>
+                  </TouchableOpacity>
+                );
+              })
+              ?.slice(0, 6)}
+          </ScrollView>
+        ) : (
+          <View style={styles.loadingContainer}>
+            <ActivityIndicator size={'large'} color={Colors.LIGHT_GREEN} />
+          </View>
+        )}
       </View>
       <View style={styles.cartItemContainer}>
         <View style={styles.cartInfoContainer}>
